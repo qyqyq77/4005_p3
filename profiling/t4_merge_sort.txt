@@ -1,0 +1,74 @@
+== n = 1 ===================================================================================================
+[121090454@node01 project3]$ srun -n 1 --cpus-per-task 1 perf stat -e cpu-cycles,cache-misses,page-faults ./build/src/mergesort/mergesort_openmp n
+ormal 1 100000000
+Merge Sort Complete!
+Execution Time: 17867 milliseconds
+std::sort Time: 11816 milliseconds
+Pass the sorting result check!
+
+ Performance counter stats for './build/src/mergesort/mergesort_openmp normal 1 100000000':
+
+   102,508,162,837      cpu-cycles:u                                                
+       228,769,635      cache-misses:u                                              
+             7,257      page-faults:u                                               
+
+      35.871152566 seconds time elapsed
+
+      35.533775000 seconds user
+       0.262378000 seconds sys
+       
+== n = 4 ===================================================================================================
+[121090454@node01 project3]$ srun -n 1 --cpus-per-task 4 perf stat -e cpu-cycles,cache-misses,page-faults ./build/src/mergesort/mergesort_openmp normal 4 100000000
+Merge Sort Complete!
+Execution Time: 10454 milliseconds
+std::sort Time: 11822 milliseconds
+Pass the sorting result check!
+
+ Performance counter stats for './build/src/mergesort/mergesort_openmp normal 4 100000000':
+
+   109,633,213,298      cpu-cycles:u                                                
+       250,091,572      cache-misses:u                                              
+             6,853      page-faults:u                                               
+
+      28.454586822 seconds time elapsed
+
+      38.076515000 seconds user
+       0.237398000 seconds sys
+
+== n = 16 ===================================================================================================
+[121090454@node01 project3]$ srun -n 1 --cpus-per-task 16 perf stat -e cpu-cycles,cache-misses,page-faults ./build/src/mergesort/mergesort_openmp normal 16 100000000
+Merge Sort Complete!
+Execution Time: 3398 milliseconds
+std::sort Time: 11789 milliseconds
+Pass the sorting result check!
+
+ Performance counter stats for './build/src/mergesort/mergesort_openmp normal 16 100000000':
+
+   106,266,340,988      cpu-cycles:u                                                
+       280,766,792      cache-misses:u                                              
+             4,710      page-faults:u                                               
+
+      21.392582558 seconds time elapsed
+
+      37.306941000 seconds user
+       0.261383000 seconds sys
+
+
+== n = 32 ===================================================================================================
+[121090454@node01 project3]$ srun -n 1 --cpus-per-task 32 perf stat -e cpu-cycles,cache-misses,page-faults ./build/src/mergesort/mergesort_openmp normal 32 100000000
+Merge Sort Complete!
+Execution Time: 2497 milliseconds
+std::sort Time: 11816 milliseconds
+Pass the sorting result check!
+
+ Performance counter stats for './build/src/mergesort/mergesort_openmp normal 32 100000000':
+
+   112,937,093,316      cpu-cycles:u                                                
+       288,896,957      cache-misses:u                                              
+             6,133      page-faults:u                                               
+
+      20.514910893 seconds time elapsed
+
+      40.371802000 seconds user
+       0.261435000 seconds sys
+
